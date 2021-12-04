@@ -115,3 +115,113 @@
 > 3. Install the azure File Sync agent on Windows Server(s)
 > 4. Register Windows Server with the Storage Sync Service
 > 5. Create a server endpoint and wait for sync
+
+---
+## <ins>**Configure Azure Blob Storage**</ins>
+---
+
+### <ins>*Azure Binary Large Objects (BLOB)*</ins>
+
+> - Unstructured data objects of various types
+>   - Text, binary data, files, docs, streaming video/audio, log files, disaster recovery
+> - Supported in BlobStorage, GPv1, GPv2
+> - Supported Tiers:
+>   -  Hot
+>   -  Cool
+>   -  Archive
+> - Supports various replication options depending on Storage Account used
+
+#### <ins>*Blob Types in Azure*</ins>
+
+> - **Block:**
+>   - Text and Binary data
+>   - Made up of blobs of data that cane be managed individually
+>   - Files and Videos commonly stored
+> - **Append:**
+>   - Made of Block Blobs optimized for Append operations
+>   - Scenarios like logging data from VMs
+> - **Page:**
+>   - Random access files up to 8 TB
+>   - Store VHD files 
+>   - Serve as disk for Azure VMs
+
+
+#### <ins>*Blob Storage Resources*</ins>
+
+> 1. **Storage Account:**
+>       - Holds and manages all of Azure data objects (blobs)
+> 2. **Container:**
+>       - Organizes a set of blobs like a directory in a file system
+>       - Storage Accounts can have an unlimited number of containers
+>       - Containers can store an unlimited number of blobs
+> 3. **Blob:**
+>       - Unstructured data objects in Azure Storage
+>
+> > <ins>**Azure Storage Endpoint for Azure Blob Object:**</ins>
+> > https://sablobblob.core.windows.net/media/img1.png
+> > - '*sablobl001*' == Storage Account Name
+> > - '*blob.core.windows.net*' == Storage Endpoint Service
+> > - '*media*' == Container Name
+> > - *'img1.png'* == Blob Name
+
+### <ins>*Azure Blob Access Tiers*</ins>
+
+> 1. **Hot:**
+>   - Frequently used data, anay data in an active state
+>   - Higher Storage Cost
+>   - Lower Access Cost
+> 2. **Cool:**
+>   - Short term backups and recovery sets
+>   - Not used often but needs to be accessible when quickly when needed
+>   - Lower SLA
+>   - Higher Access Cost
+>   - Lower Storage Cost
+> 3. **Archive:**
+>   - Storage for data rarely accessed
+>   - 180-day minimum storage time, otherwise fees will be imposed
+>   - Will need to "Rehydrate" the data to access it, can take hours if large amounts of data are stored here 
+>   - Rehydration comes at a cost
+>   - Lowest storage cost
+>   - Highest access cost (Hydration)
+
+#### <ins>*Lifecycle Management*</ins>
+
+> - Automate tiering of Blob objects (JSON, PowerShell, Azure CLI)
+> - Can take up to 24 hours to deploy
+
+### <ins>*Blob Object Replication*</ins>
+
+> - Asynchronous copies of block blob between storage accounts
+> - Supported Scenarios:
+>   - Minimizing Latency
+>   - Increase efficiency for compute workloads
+>   - Optimizing data distribution
+>   - Optimizing Costs
+
+> - Caveats for Blob Object Replications:
+>   - No Snapshot Support
+>   - Hot and Cool tiers only
+>   - No immutable blob support
+
+
+**When configuring Blob Replication you should enable the following options:**
+
+> - *'Turn on versioning for blobs.'*
+> - *'Turn on blob change feed.'*
+
+
+### <ins>*Verify Replication with Azure CLI*</ins>
+
+```PowerShell
+
+az storage blob show \
+--account-name sablobeast \
+--container-name blobdata \ 
+--name file001.txt \
+--query 'objectReplicationSourceProperties[].rules[].status' \
+--output tsv \
+--account-key '98ywhtug0w8viyebvwn08hvpfnwf0jp9fwnunpfunwfoiw/fkhboudcbyc8wn0whk47beiw'
+
+```
+
+
