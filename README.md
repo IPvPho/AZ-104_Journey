@@ -1,0 +1,1 @@
+*Please note to view any of the Mindmap.html files you may need to install the "MarkMap" extension in VS Code.*
