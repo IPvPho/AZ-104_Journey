@@ -65,5 +65,25 @@ Export-AzResourceGroup -ResourceGroupName "ps-course-rg" -Path "C:\downloads"
 /providers/Microsoft.network/networksecuritygroups/web-nsg
 
 ```
+---
+
+## <ins>*Automate Configuration and Deployment of VMs*</ins>
+
+### *Custom Script Extensions*
+
+- Scripts can be located anywhere
+- Scripts can be deployed with ARM templates
+- Scripts will only run once
+- Removing the extension does not undo what the script did
+- Write scripts that are idempotent (If it runs multiple times it will always produce the same outcome)
 
 
+### *Configure VHD Templates:*
+
+- SysPrep managed image with support up to 20 simultaneous deployments
+- Capture image, provide image name
+- Choose to have VM deleted after capture
+- Provide VM name to confirm the process
+  
+
+  
