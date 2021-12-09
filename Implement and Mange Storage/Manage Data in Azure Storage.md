@@ -116,3 +116,13 @@ azcopy copy 'H:\data'
 
 <ins>**FileStorage:**</ins>
 - SAS
+
+---
+
+## <ins>**Azure Storage Explorer**</ins>
+
+> - Manage Azure Storage from your desktop
+> - Authentication based on storage account
+> - Runs on Windows, MacOS, and Linux
+> - Supports Multiple Subscriptions
+
