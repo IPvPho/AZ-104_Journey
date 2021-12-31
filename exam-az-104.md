@@ -59,9 +59,7 @@
 
 ## <ins>**Deploy and manage Azure compute resources (20–25%)*</ins>
 
-
-### <ins>*Automate deployment of virtual machines (VMs) by using Azure Resource Manager*</ins>
-templates
+### <ins>*Automate deployment of virtual machines (VMs) by using ARM templates*</ins>
 -   modify an Azure Resource Manager template [ ]
 -   configure a virtual hard disk (VHD) template [ ]
 -   deploy from a template [ ]
@@ -80,7 +78,7 @@ templates
 -   deploy and configure virtual machine scale sets [ ]
 
 
-### <ins>*Create and configure containers</ins>
+### <ins>*Create and configure containers*</ins>
 -   configure sizing and scaling for Azure Container Instances [ ]
 -   configure container groups for Azure Container Instances [ ]
 -   configure storage for Azure Kubernetes Service (AKS) [ ]

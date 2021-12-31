@@ -22,11 +22,11 @@
 #### <ins>*Azure File Share Options*</ins>
 
 
-|            | Max Size of File Share                   | Performance Tiers | Access Tiers                     | Replication Options                |
-|:----------:|------------------------------------------|-------------------|----------------------------------|------------------------------------|
-| GPv2       | 5 TB default Up to 100 TiB upon request | Standard          | Hot, Cool, Archive,  Transaction Optimized | LRS, GRS, ZRS, GZRS                |
-| GPv1       | 5 TB default Up to 100 TiB upon request | Standard          | N/A                              | LRS, GRS                           |
-| FieStorage | 100 TB default                          | Premium           | N/A                              | LRS, ZRS (small subset of regions) |
+|            | Max Size of File Share                   | Performance Tiers | Access Tiers                               | Replication Options                |
+|------------|------------------------------------------|-------------------|--------------------------------------------|------------------------------------|
+| GPv2       | 5 TB default Up to 100 TiB upon request  | Standard          | Hot, Cool, Archive,  Transaction Optimized | LRS, GRS, ZRS, GZRS                |
+| GPv1       | 5 TB default Up to 100 TiB upon request  | Standard          | N/A                                        | LRS, GRS                           |
+| FieStorage | 100 TB default                           | Premium           | N/A                                        | LRS, ZRS (small subset of regions) |
 
 
 #### <ins>*Creating Azure File Share with Azure CLI*</ins>
