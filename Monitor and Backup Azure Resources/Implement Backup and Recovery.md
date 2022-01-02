@@ -67,3 +67,36 @@
   - Cannot changes redundancy after initial selection
 
 
+### <ins>*Azure VM Restore Options*</ins>
+
+- Can recover entire VM with OLR if source VM still exists and is being restored to original location or ALR where VM is restored to a different location
+- Disk
+- Files
+  - All or a subset of files as selected
+    - Can do this through scripting by temp mounting the files
+- Cross-Region restore
+  - Can pair with a second region 
+
+
+### <ins>*Virtual Machine Soft Delete*</ins>
+
+- Enabled by defaults
+- Protects against unintended VM deletions
+- Stored for up to 14 days 
+- Requires a backup to have been completed
+- Multiple tools for completing
+  - PowerShell
+  - AZ CLI
+  - API
+- Disabling not recommended
+
+
+### <ins>*Azure Files Backup*</ins>
+
+- Cloud-based backup for Azure Files
+- Integrates with Azure File Sync (Hybrid Environments)
+- Customized Retention
+- Instant Restore
+- Protects against accidental deletion with Soft Delete
+- Snapshot-based
+
