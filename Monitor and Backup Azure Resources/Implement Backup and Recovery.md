@@ -100,3 +100,25 @@
 - Protects against accidental deletion with Soft Delete
 - Snapshot-based
 
+---
+
+## <ins>**Implementing Azure Site Recovery**</ins>
+
+### <ins>*Azure Site Recovery*</ins>
+
+- Designed for primary site outage
+- Replicates Workloads
+  - Azure Workloads
+  - On-Premises servers and virtualization hosts
+  - AWS Windows VMs
+- Create vault in a different target (secondary) region
+
+
+### <ins>*Summary*</ins>
+
+- Recovery storage vaults only backup VMs in the same region
+- Place Recovery Storage Vaults in a different region for ASR
+- Use a different policy for each type of backup
+- Use the MARS agent for On-Prem and AWS VM backup
+- Review the CLI options
+- Get hands-on experience
